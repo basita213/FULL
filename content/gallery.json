@@ -1,0 +1,66 @@
+[
+  {
+    "id": "g1a2b3c4-d5e6-7890",
+    "image": "https://images.unsplash.com/photo-1558857563-b371033873b8?w=600&q=80",
+    "alt": "Bouquet coloré",
+    "category": "bouquets",
+    "order": 1,
+    "visible": true
+  },
+  {
+    "id": "g2b3c4d5-e6f7-8901",
+    "image": "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=600&q=80",
+    "alt": "Coffret",
+    "category": "coffrets",
+    "order": 2,
+    "visible": true
+  },
+  {
+    "id": "g3c4d5e6-f7a8-9012",
+    "image": "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&q=80",
+    "alt": "Arrangement",
+    "category": "arrangements",
+    "order": 3,
+    "visible": true
+  },
+  {
+    "id": "g4d5e6f7-a8b9-0123",
+    "image": "https://images.unsplash.com/photo-1582176604856-e824b4736520?w=600&q=80",
+    "alt": "Bonbons",
+    "category": "bonbons",
+    "order": 4,
+    "visible": true
+  },
+  {
+    "id": "g5e6f7a8-b9c0-1234",
+    "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80",
+    "alt": "Gâteau",
+    "category": "gateaux",
+    "order": 5,
+    "visible": true
+  },
+  {
+    "id": "g6f7a8b9-c0d1-2345",
+    "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80",
+    "alt": "Chocolats",
+    "category": "chocolats",
+    "order": 6,
+    "visible": true
+  },
+  {
+    "id": "g7a8b9c0-d1e2-3456",
+    "image": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80",
+    "alt": "Cadeaux",
+    "category": "coffrets",
+    "order": 7,
+    "visible": true
+  },
+  {
+    "id": "g8b9c0d1-e2f3-4567",
+    "image": "https://images.unsplash.com/photo-1486427944544-d2c246c4df14?w=600&q=80",
+    "alt": "Sucreries",
+    "category": "bonbons",
+    "order": 8,
+    "visible": true
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "brand": {
+    "name": "Candy Days",
+    "tagline": "Des Bonbons et du Bonheur",
+    "location": "Draria, Alger",
+    "description": "Candy Days est une boutique de bonbons et cadeaux sucrés basée à Draria, Alger. Nous créons des arrangements uniques — bouquets de bonbons, coffrets cadeaux et compositions sur mesure — pour rendre chaque occasion plus douce et plus colorée.",
+    "descriptionShort": "Bouquets de bonbons, coffrets cadeaux et arrangements sucrés pour toutes vos occasions."
+  },
+  "contact": {
+    "whatsapp": "+213555877636",
+    "whatsappLink": "https://wa.me/213555877636",
+    "address": "Draria, Alger, Algérie",
+    "hours": "Tous les jours, 10h — 22h"
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/candy_days_draria/"
+  },
+  "stats": {
+    "posts": "200+",
+    "followers": "31k+",
+    "passion": "100%"
+  },
+  "hero": {
+    "tag": "Draria, Alger",
+    "title": "Des Bonbons",
+    "titleAccent": "et du Bonheur",
+    "subtitle": "Bouquets de bonbons, coffrets cadeaux et arrangements sucrés pour toutes vos occasions."
+  }
+}
