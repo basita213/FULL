@@ -10,11 +10,12 @@ import { UsersService } from './users.service';
 @Module({
   imports: [
     PassportModule.register({ defaultStrategy: 'jwt' }),
+    ConfigModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       useFactory: (config: ConfigService) => ({
-        secret: config.get('JWT_SECRET'),
-        signOptions: { expiresIn: config.get('JWT_EXPIRES_IN', '15m') },
+        secret: config.get<string>('JWT_SECRET'),
+        signOptions: { expiresIn: config.get<string>('JWT_EXPIRES_IN', '15m') },
       }),
       inject: [ConfigService],
     }),
