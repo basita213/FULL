@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { ThrottlerGuard } from '@nestjs/throttler';
+import { Injectable, ExecutionContext } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 
 @Injectable()
-export class RateLimitGuard extends ThrottlerGuard {
-  protected getTracker(req: Record<string, any>): Promise<string> {
-    return Promise.resolve(req.ip || req.connection?.remoteAddress || 'unknown');
+export class RateLimitGuard extends AuthGuard('jwt') {
+  canActivate(context: ExecutionContext) {
+    return super.canActivate(context);
   }
 }

@@ -33,7 +33,7 @@ export class FileStorageService implements OnModuleInit {
     return path.join(this.getCollectionPath(collection), `${id}.md`);
   }
 
-  readAll<T>(collection: string): (T & { id: string })[] {
+  readAll(collection: string): Record<string, any>[] {
     const dir = this.getCollectionPath(collection);
     if (!fs.existsSync(dir)) return [];
 
@@ -43,20 +43,18 @@ export class FileStorageService implements OnModuleInit {
       .map((file) => {
         const content = fs.readFileSync(path.join(dir, file), 'utf-8');
         const { data, content: body } = matter(content);
-        return { id: file.replace('.md', ''), ...data, body } as T & {
-          id: string;
-        };
+        return { id: file.replace('.md', ''), ...data, body };
       })
-      .sort((a, b) => (a.order || 0) - (b.order || 0));
+      .sort((a: any, b: any) => (a.order || 0) - (b.order || 0));
   }
 
-  readOne<T>(collection: string, id: string): (T & { id: string }) | null {
+  readOne(collection: string, id: string): Record<string, any> | null {
     const filePath = this.getFilePath(collection, id);
     if (!fs.existsSync(filePath)) return null;
 
     const content = fs.readFileSync(filePath, 'utf-8');
     const { data, content: body } = matter(content);
-    return { id, ...data, body } as T & { id: string };
+    return { id, ...data, body };
   }
 
   create(
@@ -81,7 +79,7 @@ export class FileStorageService implements OnModuleInit {
     if (!existing) return false;
 
     const filePath = this.getFilePath(collection, id);
-    const newBody = body !== undefined ? body : existing.body || '';
+    const newBody = body !== undefined ? body : (existing.body as string) || '';
     const fileContent = matter.stringify(newBody, {
       ...existing,
       ...data,

@@ -23,7 +23,7 @@ export class ContactFormDto {
   @IsEmail()
   email: string;
 
-  @ApiPropertyOptional({ example: '+213555123456' })
+  @ApiProperty({ example: '+213555123456', required: false })
   @IsOptional()
   @IsString()
   phone?: string;
