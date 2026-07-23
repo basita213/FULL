@@ -26,6 +26,10 @@ export class UsersService {
   }
 
   private ensureFile() {
+    const dir = path.dirname(this.usersPath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
     if (!fs.existsSync(this.usersPath)) {
       fs.writeFileSync(this.usersPath, JSON.stringify([]));
     }
