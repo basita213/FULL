@@ -19,7 +19,7 @@ export class ContactService {
   constructor(private storage: FileStorageService) {}
 
   findAll(): ContactSubmission[] {
-    return this.storage.readAll<ContactSubmission>(this.collection);
+    return this.storage.readAll(this.collection) as ContactSubmission[];
   }
 
   create(data: Partial<ContactSubmission>, ip?: string): { id: string } {

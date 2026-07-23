@@ -23,17 +23,17 @@ export class ProductsService {
   constructor(private storage: FileStorageService) {}
 
   findAll(): Product[] {
-    return this.storage.readAll<Product>(this.collection).filter(
+    return this.storage.readAll(this.collection).filter(
       (p) => p.visible !== false,
-    );
+    ) as Product[];
   }
 
   findAllAdmin(): Product[] {
-    return this.storage.readAll<Product>(this.collection);
+    return this.storage.readAll(this.collection) as Product[];
   }
 
   findOne(id: string): Product | null {
-    return this.storage.readOne<Product>(this.collection, id);
+    return this.storage.readOne(this.collection, id) as Product | null;
   }
 
   create(data: Partial<Product>): { id: string } {
@@ -53,11 +53,5 @@ export class ProductsService {
 
   delete(id: string): boolean {
     return this.storage.delete(this.collection, id);
-  }
-
-  reorder(items: { id: string; order: number }[]): void {
-    items.forEach((item) => {
-      this.storage.update(this.collection, item.id, { order: item.order });
-    });
   }
 }

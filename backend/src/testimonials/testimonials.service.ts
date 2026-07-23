@@ -19,17 +19,17 @@ export class TestimonialsService {
   constructor(private storage: FileStorageService) {}
 
   findAll(): Testimonial[] {
-    return this.storage.readAll<Testimonial>(this.collection).filter(
+    return this.storage.readAll(this.collection).filter(
       (t) => t.visible !== false,
-    );
+    ) as Testimonial[];
   }
 
   findAllAdmin(): Testimonial[] {
-    return this.storage.readAll<Testimonial>(this.collection);
+    return this.storage.readAll(this.collection) as Testimonial[];
   }
 
   findOne(id: string): Testimonial | null {
-    return this.storage.readOne<Testimonial>(this.collection, id);
+    return this.storage.readOne(this.collection, id) as Testimonial | null;
   }
 
   create(data: Partial<Testimonial>): { id: string } {

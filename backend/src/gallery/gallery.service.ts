@@ -19,17 +19,17 @@ export class GalleryService {
   constructor(private storage: FileStorageService) {}
 
   findAll(): GalleryItem[] {
-    return this.storage.readAll<GalleryItem>(this.collection).filter(
+    return this.storage.readAll(this.collection).filter(
       (g) => g.visible !== false,
-    );
+    ) as GalleryItem[];
   }
 
   findAllAdmin(): GalleryItem[] {
-    return this.storage.readAll<GalleryItem>(this.collection);
+    return this.storage.readAll(this.collection) as GalleryItem[];
   }
 
   findOne(id: string): GalleryItem | null {
-    return this.storage.readOne<GalleryItem>(this.collection, id);
+    return this.storage.readOne(this.collection, id) as GalleryItem | null;
   }
 
   create(data: Partial<GalleryItem>): { id: string } {
